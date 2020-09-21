@@ -1,0 +1,54 @@
+doctype html
+// The HTML 'HEAD' object loads extra data that we won't see on the page
+head
+  meta(charset='utf-8')
+  link(rel='stylesheet' href='JSFighter/style/layout.css')
+  link(rel='stylesheet' href='JSFighter/style/style.css')
+  script(type='text/javascript' src='JSFighter/script/index.js')
+  title JS Fighter
+// The HTML 'BODY' object loads the data we do see on the page
+// All game content is kept in a 'gameBox' container
+#gameBox
+  // The header box is static, so we can populate it now
+  #headerBox
+    img.logos(src='JSFighter/img/logo.png' alt='')
+    h1 JSFighter
+    img.logos(src='JSFighter/img/logo_flipped.png' alt='')
+  // The graphics box starts empty. It's populated with JS later
+  #graphicsBox
+  // Bars box is filled later, too
+  #barsBox
+  // Control will change depending on game state, as well
+  #controlsBox  
+  // This is where all the game text is output to, like a console
+  #outputBox
+    | Press a button to start!
+    
+    
+    
+    
+    
+  script.
+    let name = '!{(fighter1[0].fighter_name)}';
+    let attack = '!{JSON.stringify(fighter1[0].stat_atk)}';
+    let defense = '!{JSON.stringify(fighter1[0].stat_def)}';
+    let technique = '!{JSON.stringify(fighter1[0].stat_tek)}';
+    
+    let name2 = '!{(fighter2[0].fighter_name)}';
+    let attack2 = '!{JSON.stringify(fighter2[0].stat_atk)}';
+    let defense2 = '!{JSON.stringify(fighter2[0].stat_def)}';
+    let technique2 = '!{JSON.stringify(fighter2[0].stat_tek)}';
+    
+    console.log("Attack: " + attack);
+    console.log("Defense: " + defense);
+    console.log("Technique: " + technique);
+    
+    console.log("Attack2: " + attack2);
+    console.log("Defense2: " + defense2);
+    console.log("Technique2: " + technique2);
+    
+    sendData(attack, defense, technique, attack2, defense2, technique2, name, name2);
+    
+    
+    
+    

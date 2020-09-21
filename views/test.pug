@@ -1,0 +1,76 @@
+html
+  head
+    title JSBrowser Login
+    link(rel='stylesheet' href='/css/home.css')
+  body
+  div(class="hr" id="hr")
+    div(class="usernameBox" id="username")= username
+    div(class="welcomeH2" id="welcome")= 'JSBrowser'
+      button(class="lightmodeButtonH" id="light" onclick="lightMode();")= 'Light Mode'
+      button(class="darkmodeButtonH" id="dark" onclick="darkMode();")= 'Dark Mode'
+  button(class="darkBox" style="margin-top: 5%;" onclick="day(A); " id="A")='A'
+  button(class="darkBox" style="margin-top: 5%;" onclick="day(B);" id="B")='B'
+  input(class="darkBox" style="margin-top: 5%; margin-left: -6.1%;" id="input")
+  button(class="darkBox" style="margin-top: 5%;" id="enter")='Enter'
+  script.
+        let darkCheck = 0;
+        document.getElementById("light").style.visibility = "hidden";
+        function darkMode() {
+          darkCheck = 1;
+          console.log("Darkmode: true");
+          document.getElementById("dark").style.visibility = "hidden";
+          document.getElementById("light").style.visibility = "visible";
+          
+          document.body.style.background = "#2C2F33";
+
+          document.getElementById('hr').style.backgroundColor = "#23272A";
+          document.getElementById('hr').style.borderColor = "#2c3236";
+          document.getElementById('welcome').style.color = "#99AAB5";
+          document.getElementById('username').style.color = "#99AAB5";
+        }
+        function lightMode() {
+          darkCheck = 0;
+          console.log("Darkmode: false");
+          document.getElementById("dark").style.visibility = "visible";
+          document.getElementById("light").style.visibility = "hidden";
+          
+          document.body.style.background = "#f2f2f2";
+
+          document.getElementById('hr').style.backgroundColor = "#f2f2f2";
+          document.getElementById('hr').style.borderColor = "#004869";
+          document.getElementById('welcome').style.color = "#004869";
+          document.getElementById('username').style.color = "#004869";
+        }
+        
+        
+        
+        
+        var day;
+        document.getElementById("input").style.visibility = "hidden";
+        document.getElementById("enter").style.visibility = "hidden";
+        function day(x) {
+          document.getElementById("A").style.visibility = "hidden";
+          document.getElementById("B").style.visibility = "hidden";
+          document.getElementById("input").style.visibility = "visible";
+          document.getElementById("enter").style.visibility = "visible";
+        }
+      
+      
+      
+  
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
